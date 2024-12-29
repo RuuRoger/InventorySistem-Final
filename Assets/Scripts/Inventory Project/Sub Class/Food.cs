@@ -5,23 +5,23 @@ using UnityEngine;
 
 namespace Inventory 
 { 
-    public interface IConsumable { }
-
     [Serializable]
-    public class Food : Item, IUsable, ISellable, IConsumable
+    public class Food : Item, IUsable, ISellable, IConsumible
     {
-        //Public Properties
+        #region Properties
         [field: SerializeField] public float HealingPoints { get; set; }
         [field: SerializeField] public float Price { get; set; }
+        #endregion
 
-        //Public Methods
+        #region Public Methods
         public float Sell()
         {
             Debug.Log("Has ganado " + Price + "rupias");
             return Price;
         }
-
+       
         public void Use() => Debug.Log("Has comido " + Name + "y ganas " + HealingPoints + " de salud.");
+        #endregion
     }
 
 }

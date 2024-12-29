@@ -8,12 +8,13 @@ namespace Inventory
     [Serializable]
     public class Weapon : Item, IUsable
     {
-        //Public Properties
+        #region Properties
         [field: SerializeField] public float Damage { get; set; }
+        #endregion
 
-        //Public Methods
+        #region Public Methods
         public void Attack() => Debug.Log("¡Ataque!");
-
         public void Use() => Attack();
+        #endregion
     }
 }

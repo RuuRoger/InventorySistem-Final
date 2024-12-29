@@ -8,18 +8,15 @@ using TMPro;
 
 namespace Inventory 
 {
-    //Private Fields
     public class ItemButton : MonoBehaviour
     {
-        //Private Fields
+        #region Fields
         private Button _button;
         private Item _currentItem;
         private TextMeshProUGUI _buttonText;
+        #endregion
 
-        //Events
-        public event Action OnClick;
-
-        //Public Properties
+        #region Properties
         public Button Button { get; set; }
 
         public Item CurrentItem 
@@ -34,8 +31,9 @@ namespace Inventory
                 _buttonText.text = _currentItem.Name;
             }
         }
+        #endregion
 
-        //Unity Callbacks
+        #region Unity Callbacks
         private void Awake()
         {
             _button = GetComponent<Button>();
@@ -43,6 +41,11 @@ namespace Inventory
             //Delegate example
             _button.onClick.AddListener(() => OnClick?.Invoke());
         }
+        #endregion
+
+        #region Events
+        public event Action OnClick;
+        #endregion
     }
 
 }

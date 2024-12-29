@@ -6,8 +6,8 @@ namespace Inventory
 {
     public interface IUsable
     {
-        //Public Methods
+        #region Public Methods
         public void Use();
-
+        #endregion
     }
 }

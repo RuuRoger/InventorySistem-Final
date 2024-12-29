@@ -6,10 +6,12 @@ namespace Inventory
 {
     public interface ISellable
     {
-        //Public Properties
+        #region Properties
         public float Price { get; set; }
+        #endregion
 
-        //Public Methods
+        #region Public Methods
         public float Sell();
+        #endregion
     }
 }
